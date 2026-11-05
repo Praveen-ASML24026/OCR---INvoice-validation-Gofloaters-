@@ -1,0 +1,14 @@
+# Core Document Parsing & Machine Learning
+docling>=2.130.0,<=2.135.0
+rapidocr-onnxruntime==1.4.4
+pypdfium2==5.13.0
+opencv-python-headless>=4.8.0,<=5.0.0.93
+Pillow>=10.0.0,<=12.3.0
+numpy>=1.24.0,<=2.5.3
+
+# Web API Framework & Server
+fastapi==0.141.1
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+pydantic==2.13.5
+python-dotenv==1.2.3

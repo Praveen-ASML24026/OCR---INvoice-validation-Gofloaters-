@@ -1,0 +1,18 @@
+# ==============================================================================
+# Nixpacks Configuration for GoFloaters Invoice Parser (Coolify Deployment)
+# ==============================================================================
+
+[phases.setup]
+# Essential shared libraries for OpenCV, RapidOCR, PyTorch, and ONNX Runtime
+nixPkgs = ["libGL", "glib", "zlib"]
+aptPkgs = ["libgl1", "libglib2.0-0", "libgomp1"]
+
+[phases.install]
+cmds = [
+  "pip install --upgrade pip",
+  "pip install -r requirements.txt"
+]
+
+[start]
+# Runs FastAPI Uvicorn on 0.0.0.0 binding dynamically to Coolify's PORT (defaults to 8000)
+cmd = "python -m uvicorn invoice_parser.api:app --host 0.0.0.0 --port ${PORT:-8000}"
